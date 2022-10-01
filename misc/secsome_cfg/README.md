@@ -4,6 +4,9 @@
 # Hint
 `CFG` stands for `Control Flow Graph`. 
 
+# Difficulty
+⭐
+
 # Flag
 `MAYCTF{secsome_S3creT_C0nTroL_Flow_GraPh}`
 

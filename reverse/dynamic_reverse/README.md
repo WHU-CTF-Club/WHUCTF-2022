@@ -2,6 +2,9 @@
 We hate algorithms, so sometimes, debug it dynamically can avoid that mess.
 Do you know how to do that?
 
+# Difficulty
+⭐
+
 # Flag
 `mayctf{Reverse_It_Dynamically_IS_S1mple!}`
 

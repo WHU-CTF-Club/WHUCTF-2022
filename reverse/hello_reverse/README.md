@@ -2,6 +2,9 @@
 Welcome to Reverse world!
 Explore the file and figure out where is the flag!
 
+# Difficulty
+⭐
+
 # Flag
 `mayctf{Hello_World_For_Reverse!}`
 
