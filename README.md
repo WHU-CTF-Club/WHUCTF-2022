@@ -8,4 +8,4 @@
 
 ### Due Date: 31 Oct - 6 Nov
 
-### flag form : MCTF{xxxx-xxxx-xxxx-xxxx}
+### flag form : mayctf{xxxx-xxxx-xxxx-xxxx}
