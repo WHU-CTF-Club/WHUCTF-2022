@@ -1,6 +1,7 @@
  # CTF organizing committee
 
 ### Deadline :
+   #### blog : 9 Oct
    #### issue : 23 Oct
    #### platform : 23 Oct
    #### Test and simulation : 28 Oct
