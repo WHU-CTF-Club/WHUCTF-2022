@@ -2,6 +2,9 @@
 Welcome to Reverse world!
 Explore the file and figure out where is the flag!
 
+# Platform
+Linux
+
 # Difficulty
 ⭐
 

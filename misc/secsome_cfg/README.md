@@ -1,6 +1,9 @@
 # Description
 `secsome` have some secret. And he hide it in this program. Can you find it out?
 
+# Platform
+Linux
+
 # Hint
 `CFG` stands for `Control Flow Graph`. 
 

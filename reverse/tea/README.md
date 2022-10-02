@@ -2,6 +2,9 @@
 **TEA** is a widely used encryption algorithm.
 Do you know how to decode it?  
 
+# Platform
+Linux
+
 # Difficulty
 ⭐⭐
 
