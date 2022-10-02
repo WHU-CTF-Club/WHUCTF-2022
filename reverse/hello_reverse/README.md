@@ -2,14 +2,14 @@
 Welcome to Reverse world!
 Explore the file and figure out where is the flag!
 
-# Platform
-Linux
-
 # Difficulty
 ⭐
 
 # Flag
 `mayctf{Hello_World_For_Reverse!}`
+
+# Platform
+Linux
 
 # WriteUp
 使用`IDA Pro`打开程序，`Shift+F12`调出`Strings`面板即可得到。

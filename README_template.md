@@ -1,11 +1,17 @@
-# Description : 
+# Description
+LONG DESC
 
 # Difficulty
-⭐⭐
+⭐⭐⭐⭐⭐
 
-# Flag : 
-mayctf{xxxx_xxxx_xxxx_xxxx_xxxx}
+# Flag
+`FLAG`
 
-# HINT : 
+# Platform (Optional)
+ARCH
 
-# WP : 
+# Hint (Optional)
+LONG HINT
+
+# WriteUp
+题解
