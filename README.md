@@ -1,11 +1,16 @@
- # CTF organizing committee
+# CTF organizing committee
 
-## Deadline :
-   #### blog : 9 Oct
-   #### issue : 23 Oct
-   #### platform : 23 Oct
-   #### Test and simulation : 28 Oct
+## Deadline
+- blog : 9 Oct
+- issue : 23 Oct
+- platform : 23 Oct
+- Test and simulation : 28 Oct
 
-## Due Date: 31 Oct - 6 Nov
+## Due Date
+**31 Oct - 6 Nov**
 
-## flag form : mayctf{xxxx-xxxx-xxxx-xxxx}
+## Flag form
+- `mayctf{xxxx-xxxx-xxxx-xxxx}`
+- `MAYCTF{xxxx-xxxx-xxxx-xxxx}`
+- `flag{xxxx-xxxx-xxxx-xxxx}`
+- `FLAG{xxxx-xxxx-xxxx-xxxx}`
