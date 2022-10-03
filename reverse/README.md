@@ -9,7 +9,7 @@
   - **maze**
 - Day 3
   - **tea**
-  - TBD - Android JAVA
+  - hello_android - Android JAVA
 - Day 4
   - TBD - Android Native
   - TBD - Linux Native
