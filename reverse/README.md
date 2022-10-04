@@ -4,7 +4,7 @@
 - **Day 1** 安装`IDA Pro`, `gdb`
   - **hello_reverse**
   - **dynamic_reverse**
-- **Day 2** 安装`dnSpy`
+- **Day 2** 安装`dnSpy/ILSpy`
   - **hello_net**
   - **maze**
 - Day 3
