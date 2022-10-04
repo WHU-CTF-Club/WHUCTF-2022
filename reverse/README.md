@@ -7,7 +7,7 @@
 - **Day 2** 安装`dnSpy/ILSpy`
   - **hello_net**
   - **maze**
-- Day 3
+- **Day 3**
   - **tea**
   - **hello_android** - Android JAVA
 - Day 4
@@ -17,10 +17,10 @@
   - TBD - Windows x86 Conf
 
 ### 团队赛
-- Day 1
-  - TBD
+- **Day 1**
+  - **baby_exception** - 魔改base64 + C++异常套壳
   - **baby_way** - theWay去掉花指令
   - **baby_vm** - Linux 虚拟机
 - Day 2
   - TBD - Windows NET套壳Native
-  - baby_console - 操作台交互RE
+  - baby_console - 操作台交互
