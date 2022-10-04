@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/PC.css" class="equipment">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <link rel="shortcut icon" href="imgs/icon.jpg">
+    
+    <title>羊了个羊</title>
+</head>
+
+<body>
+    <button class="audio">
+        <?xml version="1.0" encoding="UTF-8"?><svg width="33" height="33" viewBox="0 0 48 48" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M30 34.5C30 32.567 31.567 31 33.5 31H41V34.4C41 36.3882 39.3882 38 37.4 38H33.5C31.567 38 30 36.433 30 34.5Z"
+                fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" />
+            <path
+                d="M6 38.5C6 36.567 7.567 35 9.5 35H16V38.4C16 40.3882 14.3882 42 12.4 42H9.5C7.567 42 6 40.433 6 38.5Z"
+                fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" />
+            <path d="M16 18.044V18.044L41 12.125" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M16 38V10L41 4V33.6924" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" /></svg>
+    </button>
+    <div class="surplus"></div>
+    <div class="chronoscope">0</div>
+    <button class="updataPage" onclick="javascript:location.reload();">更新</button>
+
+    <div class="operate">
+        <button class="disorganize btn">打乱</button>
+        <button class="recall btn">撤回</button>
+        <button class="selectLevel btn" level="6" index="0">第一关</button>
+        <button class="reset btn">重新开始</button>
+    </div>
+    <div class="levelBox">
+        <div>
+            <button level="6" index="0">第一关</button>
+            <button level="233" index="2">第二关</button>
+        </div>
+    </div>
+
+    <div class="box"></div>
+
+    <audio muted autoplay src="audio/失败.mp3"></audio>
+    <audio muted autoplay src="audio/胜利2.mp3"></audio>
+    <audio autoplay loop class="BGAudio"></audio>
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>

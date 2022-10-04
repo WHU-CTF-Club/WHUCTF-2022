@@ -1,0 +1,159 @@
+:root {
+    --top-text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(../imgs/BG1.jpeg);
+    background-size: cover;
+    background-position: left;
+    background-color: #b6b6b6;
+}
+
+.reset {
+    width: 75px;
+}
+
+.audio {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.surplus {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    color: var(--top-text-color);
+    font-size: 22px;
+    font-weight: 800;
+    text-shadow: 0 0 5px black;
+}
+
+.surplus::before {
+    content: '剩余 ';
+    font-size: 16px;
+}
+
+.operate {
+    width: 100vw;
+    position: fixed;
+    bottom: 120px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.operate button {
+    width: 70px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    font-size: 14px;
+    color: rgb(66, 144, 255);
+    font-weight: 800;
+    border: none;
+    margin: 0 8px;
+}
+
+@keyframes fade {
+    100% {
+        opacity: 0.2;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes enter {
+    0% {
+        transform: scale(0);
+    }
+}
+
+.levelBox {
+    display: none;
+}
+
+.levelBox>div {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+}
+
+.levelBox>div button {
+    width: 200px;
+    height: 45px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #060200;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid transparent;
+    animation: enter .3s;
+}
+
+.levelBox>div button.win {
+    color: rgb(255, 102, 0);
+    font-weight: 800;
+}
+
+.chronoscope {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    color: var(--top-text-color);
+    font-weight: 700;
+    text-shadow: 0 0 5px black;
+}
+
+.chronoscope::after {
+    content: ' S';
+}
+
+.updataPage {
+    width: 26px;
+    color: var(--top-text-color);
+    font-size: 14px;
+    position: fixed;
+    top: 80px;
+    left: 23px;
+    border: 2px solid var(--top-text-color);
+    background-color: transparent;
+    font-weight: 800;
+}
+
+button:focus {
+    outline: none;
+}
+
+.box {
+    border-color: rgb(99, 164, 255);
+}
+
+.goods {
+    padding: 23px;
+    filter: grayscale(6%);
+}
+
+.hrefSheep {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    color: white;
+}
