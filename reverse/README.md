@@ -9,9 +9,9 @@
   - **maze**
 - Day 3
   - **tea**
-  - hello_android - Android JAVA
+  - **hello_android** - Android JAVA
 - Day 4
-  - TBD - Android Native
+  - **native_android** - Android Native
   - TBD - Linux Native
 - Day 5
   - TBD - Windows x86 Conf
