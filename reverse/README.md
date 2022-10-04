@@ -14,7 +14,8 @@
   - **native_android** - Android Native
   - TBD - Linux Native
 - Day 5
-  - TBD - Windows x86 Conf
+  - **threads** - Windows多线程
+  - TBD
 
 ### 团队赛
 - **Day 1**
