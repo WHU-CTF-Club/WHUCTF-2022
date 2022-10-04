@@ -20,7 +20,7 @@
 - Day 1
   - TBD
   - **baby_way** - theWay去掉花指令
-  - baby_vm - Linux 虚拟机
+  - **baby_vm** - Linux 虚拟机
 - Day 2
   - TBD - Windows NET套壳Native
   - baby_console - 操作台交互RE
