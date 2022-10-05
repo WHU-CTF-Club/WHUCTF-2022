@@ -15,7 +15,7 @@
   - **hello_exception** - Linux Native + C++ Exception
 - Day 5
   - **threads** - Windows多线程
-  - grand_challenge - TBD
+  - **special_challenge** - CUDA C++
 
 ### 团队赛
 - **Day 1**
