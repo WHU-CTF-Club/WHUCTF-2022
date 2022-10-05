@@ -10,12 +10,12 @@
 - **Day 3**
   - **tea**
   - **hello_android** - Android JAVA
-- Day 4
+- **Day 4**
   - **native_android** - Android Native
-  - TBD - Linux Native
+  - **hello_exception** - Linux Native + C++ Exception
 - Day 5
   - **threads** - Windows多线程
-  - TBD
+  - grand_challenge - TBD
 
 ### 团队赛
 - **Day 1**
