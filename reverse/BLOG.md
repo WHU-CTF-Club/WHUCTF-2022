@@ -44,6 +44,7 @@ int main()
   - **IDA Pro**
   - **dnSpy**
   - **Java Decompiler**
+  - **dnSpy / ILSpy**
   - binwalk
   - strings
   - file
