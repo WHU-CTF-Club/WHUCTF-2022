@@ -20,8 +20,5 @@ What's the type of the sizeof()?
 
 ## WriteUp
 
-首先IDA打开，看到需要输入一个大于4000的数字，但是在输入大于2000时，会直接返回。
+用pwntools写一个交互脚本就行
 
-sizeof得到的类型是size_t, 实际上属于unsigned int, 当int和unsigned int参与运算时，int会强制类型转换为unsigned int
-
-所以输入任意负数即可

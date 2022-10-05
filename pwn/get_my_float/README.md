@@ -27,3 +27,4 @@ Linux-x64
 
 ## WriteUp
 
+pwntools写一个交互脚本就行,  exp请见此目录下get_my_float.py
