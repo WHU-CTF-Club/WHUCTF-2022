@@ -13,6 +13,7 @@
 - **Day 4**
   - **native_android** - Android Native
   - **hello_exception** - Linux Native + C++ Exception
+  - **magic_cube**
 - **Day 5** 信息检索，自我学习
   - **threads** - Windows多线程
   - **special_challenge** - CUDA C++
