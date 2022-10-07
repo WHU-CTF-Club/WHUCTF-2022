@@ -2,7 +2,7 @@
 Do it! Just do it!
 
 # Difficulty
-⭐⭐⭐
+⭐⭐
 
 # Flag
 `mayctf{n0w_y0u_Mas7er_r8a_anD_f1ask_Mayb3}`
