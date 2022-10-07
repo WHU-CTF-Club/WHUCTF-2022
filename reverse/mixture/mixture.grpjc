@@ -1,0 +1,264 @@
+package main
+ 
+import (
+    "fmt"
+    "math/rand"
+    "strconv"
+    "sync"
+)
+ 
+//生产者-消费者 channel 实现 一边生产 一边消费
+type (
+    Producer interface {
+        produceApple(s *superMakert) //生产苹果
+    }
+ 
+    Consumer interface {
+        buyApple(s *superMakert) //超市买苹果
+    }
+ 
+    superMakert struct {
+        //list包 实现了双向链表
+        //apples *list.List
+        apples chan Apple
+    }
+ 
+    ProducerImpl struct {
+        Producer //实现生产苹果的接口
+    }
+ 
+    ConsumerImpl struct {
+        Consumer //实现消费苹果的接口
+    }
+ 
+    Apple struct {
+        weight float64 //重量
+        number int     //编号
+    }
+)
+ 
+//实现接口里面的方法
+func (p *ProducerImpl) produceApple(s *superMakert) {
+    for {
+        apple := Apple{
+            number: rand.Intn(10000),
+            weight: rand.Float64(),
+        }
+        fmt.Printf("生产了编号为%s,重量为%0.2f的苹果\r\n", strconv.Itoa(apple.number), apple.weight)
+        s.apples <- apple
+    }
+}
+ 
+//实现接口里面的方法
+func (c *ConsumerImpl) buyApple(s *superMakert) {
+    for {
+        element, _ := <-s.apples
+        fmt.Printf("买了编号为%s,重量为%0.2f的苹果\r\n", strconv.Itoa(element.number), element.weight)
+    }
+}
+ 
+func main() {
+    //WaitGroup用于等待一组线程的结束。父线程调用Add方法来设定应等待的线程的数量。
+    //每个被等待的线程在结束时应调用Done方法。同时，主线程里可以调用Wait方法阻塞至所有线程结束
+    wg := new(sync.WaitGroup)
+    p := new(ProducerImpl)
+    c := new(ConsumerImpl)
+    a := &superMakert{apples: make(chan Apple)}
+ 
+    wg.Add(2)
+    go func() { //goroutine
+        p.produceApple(a)
+        wg.Done()
+    }()
+ 
+    go func() {
+        c.buyApple(a)
+        wg.Done()
+    }()
+    wg.Wait()
+}
+　　
+
+3. 多生产多消费
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+package main
+ 
+import (
+    "fmt"
+    "math/rand"
+    "strconv"
+    "sync"
+)
+ 
+//生产者-消费者 channel 实现 一边生产 一边消费
+type (
+    Producer interface {
+        produceApple(s *superMakert) //生产苹果
+    }
+ 
+    Consumer interface {
+        buyApple(s *superMakert) //超市买苹果
+    }
+ 
+    superMakert struct {
+        //list包 实现了双向链表
+        //apples *list.List
+        apples chan Apple
+    }
+ 
+    ProducerImpl struct {
+        Producer //实现生产苹果的接口
+    }
+ 
+    ConsumerImpl struct {
+        Consumer //实现消费苹果的接口
+    }
+ 
+    Apple struct {
+        weight float64 //重量
+        number int     //编号
+    }
+)
+ 
+//实现接口里面的方法
+func (p *ProducerImpl) produceApple(s *superMakert) {
+    for {
+        apple := Apple{
+            number: rand.Intn(10000),
+            weight: rand.Float64(),
+        }
+        fmt.Printf("生产了编号为%s,重量为%0.2f的苹果\r\n", strconv.Itoa(apple.number), apple.weight)
+        s.apples <- apple
+    }
+}
+ 
+//实现接口里面的方法
+func (c *ConsumerImpl) buyApple(s *superMakert) {
+    for {
+        element, ok := <-s.apples
+        if ok {
+            fmt.Printf("买了编号为%s,重量为%0.2f的苹果\r\n", strconv.Itoa(element.number), element.weight)
+        } else {
+            fmt.Printf("没有买到苹果")
+        }
+ 
+    }
+}
+ 
+func main() {
+    //WaitGroup用于等待一组线程的结束。父线程调用Add方法来设定应等待的线程的数量。
+    //每个被等待的线程在结束时应调用Done方法。同时，主线程里可以调用Wait方法阻塞至所有线程结束
+    wg := new(sync.WaitGroup)
+    p := new(ProducerImpl)
+    c := new(ConsumerImpl)
+    a := &superMakert{apples: make(chan Apple, 20)}
+ 
+    for i := 0; i < 20; i++ {
+        wg.Add(1)
+        go func() { //goroutine
+            p.produceApple(a)
+            wg.Done()
+        }()
+    }
+ 
+    for j := 0; j < 20; j++ {
+        wg.Add(1)
+        go func() {
+            c.buyApple(a)
+            wg.Done()
+        }()
+    }
+    wg.Wait()
+}
+
+
+
