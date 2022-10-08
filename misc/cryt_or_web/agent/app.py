@@ -26,23 +26,23 @@ def before_action():
 
 @app.route('/encrypt', methods=['GET'])
 def encrypt():
-# 加密
     if request.method == 'GET':
         message = "FAKE_HINT"
         rsakey = RSA.importKey(open("public.pem").read())
         cipher = Cipher_pkcs1_v1_5.new(rsakey)  # 创建用于执行pkcs1_v1_5加密或解密的密码
         cipher_text = base64.b64encode(cipher.encrypt(message.encode('utf-8')))
-        #print(cipher_text.decode('utf-8'))
         return render_template('encrypt.html', a=cipher_text.decode('utf-8'))
 
 @app.route('/decrypt', methods=['GET'])
 def decrypt():
-# 解密
     if request.method == 'GET':
-        cipher_text = "mfW01W+GlkqGFgKy0cUHZBIa3bTzF8gnDLQoPexSnByoh2pqqbyWVMyE47m3ZBqfV8GmYp0N9q/SSWxG3HzhwD79pj25JD/XC6Cf4QXYzFbo/GPeNvhcNrDBU7fThsMVHfsKKplCe3K400ewnsPfMsTFtJyAM/8GmkBR3Ety3kc="
+        cipher_text = "JdUt22KMYhlapZosoogmXdrWR4LQGUB80PsUPiuTMXh3KCu8AqOVK79b7qO5+nJ9vROzPPbvHuI7eYlhTj4LabNotVCIMejeUSTlCGoXAaK11BcnofjobV9fpXsfG/sPE+b+sys31/+yG9SImPDXqL5WVVYADvIoGDOH4TWc7C4="
         encrypt_text = cipher_text.encode('utf-8')
         rsakey = RSA.importKey(open("private.pem").read())
         cipher = Cipher_pkcs1_v1_5.new(rsakey)  # 创建用于执行pkcs1_v1_5加密或解密的密码
-        text = cipher.decrypt(base64.b64decode(encrypt_text), "解密失败")
-        #print(text.decode('utf-8'))
-        return render_template('decrypt.html', b=text.decode('utf-8'))
+        text = cipher.decrypt(base64.b64decode(encrypt_text),"error")
+        return render_template('decrypt.html', a=text.decode('utf-8'))
+
+
+if __name__ == '__main__':
+    app.run('0.0.0.0', 80)
