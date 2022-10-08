@@ -11,4 +11,6 @@ Can you do it? I don't believe that.
 irsa
 
 # WriteUp
+https://www.icao.int/Pages/AlphabetRadiotelephony.aspx
+
 mike alfa yankee charlie Tango Foxtrot left bracket Echo Victor Echo Romeo Yankee underline Foxtrot Lima India Echo Romeo underline Kilo November Oscar Whiskey underline India Romeo Sierra Alfa right bracket 

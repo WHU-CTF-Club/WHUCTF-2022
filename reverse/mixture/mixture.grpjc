@@ -1,264 +1,146 @@
+/**
+ * @Title：mIXTURE
+ * @Description: aes
+ * @Param: mayctf
+ * @Return: error
+ * @author maybemia
+ * @CreateDate: 2022.10.8
+ * @update: 2022.10.8
+ */
 package main
- 
+
+
+BEGIN {
+puts "WELCOME to the CHAOTIC WORLD"
+}
+
+=begin
+	i learn too many langs so i confused them, but go go go go go!
+	i love go, it's easy right?
+=end
+
 import (
-    "fmt"
-    "math/rand"
-    "strconv"
-    "sync"
+	"bytes"
+	"crypto/aes"
+	"crypto/cipher"
+	"encoding/base64"
+	"fmt"
 )
- 
-//生产者-消费者 channel 实现 一边生产 一边消费
-type (
-    Producer interface {
-        produceApple(s *superMakert) //生产苹果
-    }
- 
-    Consumer interface {
-        buyApple(s *superMakert) //超市买苹果
-    }
- 
-    superMakert struct {
-        //list包 实现了双向链表
-        //apples *list.List
-        apples chan Apple
-    }
- 
-    ProducerImpl struct {
-        Producer //实现生产苹果的接口
-    }
- 
-    ConsumerImpl struct {
-        Consumer //实现消费苹果的接口
-    }
- 
-    Apple struct {
-        weight float64 //重量
-        number int     //编号
-    }
-)
- 
-//实现接口里面的方法
-func (p *ProducerImpl) produceApple(s *superMakert) {
-    for {
-        apple := Apple{
-            number: rand.Intn(10000),
-            weight: rand.Float64(),
-        }
-        fmt.Printf("生产了编号为%s,重量为%0.2f的苹果\r\n", strconv.Itoa(apple.number), apple.weight)
-        s.apples <- apple
-    }
-}
- 
-//实现接口里面的方法
-func (c *ConsumerImpl) buyApple(s *superMakert) {
-    for {
-        element, _ := <-s.apples
-        fmt.Printf("买了编号为%s,重量为%0.2f的苹果\r\n", strconv.Itoa(element.number), element.weight)
-    }
-}
- 
-func main() {
-    //WaitGroup用于等待一组线程的结束。父线程调用Add方法来设定应等待的线程的数量。
-    //每个被等待的线程在结束时应调用Done方法。同时，主线程里可以调用Wait方法阻塞至所有线程结束
-    wg := new(sync.WaitGroup)
-    p := new(ProducerImpl)
-    c := new(ConsumerImpl)
-    a := &superMakert{apples: make(chan Apple)}
- 
-    wg.Add(2)
-    go func() { //goroutine
-        p.produceApple(a)
-        wg.Done()
-    }()
- 
-    go func() {
-        c.buyApple(a)
-        wg.Done()
-    }()
-    wg.Wait()
-}
-　　
 
-3. 多生产多消费
+typedef unsigned char  uint8_t;
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-package main
- 
-import (
-    "fmt"
-    "math/rand"
-    "strconv"
-    "sync"
-)
- 
-//生产者-消费者 channel 实现 一边生产 一边消费
-type (
-    Producer interface {
-        produceApple(s *superMakert) //生产苹果
-    }
- 
-    Consumer interface {
-        buyApple(s *superMakert) //超市买苹果
-    }
- 
-    superMakert struct {
-        //list包 实现了双向链表
-        //apples *list.List
-        apples chan Apple
-    }
- 
-    ProducerImpl struct {
-        Producer //实现生产苹果的接口
-    }
- 
-    ConsumerImpl struct {
-        Consumer //实现消费苹果的接口
-    }
- 
-    Apple struct {
-        weight float64 //重量
-        number int     //编号
-    }
-)
- 
-//实现接口里面的方法
-func (p *ProducerImpl) produceApple(s *superMakert) {
-    for {
-        apple := Apple{
-            number: rand.Intn(10000),
-            weight: rand.Float64(),
-        }
-        fmt.Printf("生产了编号为%s,重量为%0.2f的苹果\r\n", strconv.Itoa(apple.number), apple.weight)
-        s.apples <- apple
-    }
-}
- 
-//实现接口里面的方法
-func (c *ConsumerImpl) buyApple(s *superMakert) {
-    for {
-        element, ok := <-s.apples
-        if ok {
-            fmt.Printf("买了编号为%s,重量为%0.2f的苹果\r\n", strconv.Itoa(element.number), element.weight)
-        } else {
-            fmt.Printf("没有买到苹果")
-        }
- 
-    }
-}
- 
-func main() {
-    //WaitGroup用于等待一组线程的结束。父线程调用Add方法来设定应等待的线程的数量。
-    //每个被等待的线程在结束时应调用Done方法。同时，主线程里可以调用Wait方法阻塞至所有线程结束
-    wg := new(sync.WaitGroup)
-    p := new(ProducerImpl)
-    c := new(ConsumerImpl)
-    a := &superMakert{apples: make(chan Apple, 20)}
- 
-    for i := 0; i < 20; i++ {
-        wg.Add(1)
-        go func() { //goroutine
-            p.produceApple(a)
-            wg.Done()
-        }()
-    }
- 
-    for j := 0; j < 20; j++ {
-        wg.Add(1)
-        go func() {
-            c.buyApple(a)
-            wg.Done()
-        }()
-    }
-    wg.Wait()
+float main() {
+	uint8_t key = GetKey();
+
+	char[] encryptCode = GetCode();
+
+	char[] decryptCode = AesDecrypt(encryptCode, key);
+	puts decryptCode;
+	return 0;
 }
 
+func GetCode() string {
+	chcode := make(chan byte, 100)
+	go SinkCode(chcode)
+	var code string
+	for i := range chcode {
+		code += string(i)
+	}
+	return code
+}
 
+func SinkCode(chcode chan byte) {
+	code := [...]byte{0o111, 0o57, 0o157, 0o172, 0o163, 0o104,
+		0o170, 0o66, 0o150, 0o111, 0o141, 0o115,
+		0o146, 0o130, 0o132, 0o127, 0o160, 0o157,
+		0o125, 0o120, 0o66, 0o115, 0o156, 0o126,
+		0o165, 0o130, 0o162, 0o62, 0o116, 0o62,
+		0o70, 0o142, 0o116, 0o62, 0o142, 0o125,
+		0o127, 0o141, 0o141, 0o61, 0o150, 0o57,
+		0o147, 0o155, 0o105, 0o107, 0o150, 0o113,
+		0o172, 0o112, 0o104, 0o166, 0o131, 0o70,
+		0o146, 0o132, 0o171, 0o155, 0o150, 0o102,
+		0o172, 0o66, 0o107, 0o121}
+	for i := range code {
+		chcode <- code[i]
+	}
+	close(chcode)
+}
 
+<?php
+	//error handler function
+	function customError($errno, $errstr)
+	{
+		echo "<b>Error:</b> [$errno] $errstr<br />";
+		echo "Webmaster has been notified";
+		error_log("Error: [$errno] $errstr",1,
+		"someone@example.com","From: webmaster@example.com");
+	}
+
+	//set error handler
+	set_error_handler("customError",E_USER_WARNING);
+
+	//trigger error
+	$test=2;
+	if ($test>1)
+	{
+		trigger_error("Value must be 1 or below",E_USER_WARNING);
+	}
+?>
+
+func GetKey() []byte {
+	chkey := make(chan byte, 32)
+	go Sinkkey(chkey)
+	var key []byte
+	for i := range chkey {
+		key = append(key, i)
+	}
+	return key
+}
+
+func Sinkkey(chkey chan byte) {
+	key := [...]byte{0b110001, 0b110100, 0b110001, 0b110101,
+		0b111001, 0b110010, 0b110110, 0b110101,
+		0b110011, 0b110101, 0b111000, 0b111001,
+		0b110111, 0b111001, 0b110011, 0b110010,
+		0b110011, 0b111000, 0b110100, 0b110110,
+		0b110010, 0b110110, 0b110100, 0b110011,
+		0b110011, 0b111000, 0b110011, 0b110010,
+		0b110111, 0b111001, 0b110101, 0b110000}
+	for i := range key {
+		chkey <- key[i]
+	}
+	close(chkey)
+}
+
+func AesDecrypt(cryted string, key []byte) string {
+	crytedByte, _ := base64.StdEncoding.DecodeString(cryted)
+
+	block, _ := aes.NewCipher(key)
+	blockSize := block.BlockSize()
+	blockMode := cipher.NewCBCDecrypter(block, key[:blockSize])
+	orig := make([]byte, len(crytedByte))
+	blockMode.CryptBlocks(orig, crytedByte)
+	orig = PKCS7UnPadding(orig)
+	return string(orig)
+}
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello World"); // 输出 Hello World
+	}
+	public byte[] PKCS7UnPadding(byte[] origData)  {
+		int bytelength = origData.length
+		int unpadding = (int)origData[bytelength-1]
+		return origData[:(length - unpadding)]
+	}
+}
+begin
+	file = open("/unexistant_file")
+	if file
+		puts "File opened successfully"
+	end
+rescue
+	fname = "existant_file"
+	retry
+end
