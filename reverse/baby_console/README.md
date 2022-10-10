@@ -1,6 +1,5 @@
 # Description
-secsome is laaaaaaaaaazy. So he simply modified something and decided to put it here.
-If you want the flag, you'll have to do it on the server `nc xxx.xxx.xxx.xxx xxxxx`, but there's a timeout so you should test your solutions locally.
+[1！5！](https://www.bilibili.com/video/BV1fV411W7Ss)
 
 # Difficulty
 ⭐⭐⭐⭐⭐
