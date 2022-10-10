@@ -25,4 +25,4 @@
   - **baby_vm** - Linux 虚拟机
 - Day 2
   - baby_complex - Windows NET套壳Native + CUDA C++ + 花指令
-  - baby_console - 操作台交互, TODO: 改字符串
+  - **baby_console** - 操作台交互, angstorm 2022 weebhunters2
