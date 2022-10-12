@@ -6,7 +6,7 @@ I'm trapped in a maze! Is there anyone could get me out of here!
 
 # Flag
 `mayctf{sha256(SDSSDSDDSDDDWDDSSSAAAAAASSDDDDDD)}`
-`mayctf{0b166389d580bb3f857b869847a0512667d98e09896153f2afb715ff2a3b3214}`
+`mayctf{50690e67edf14e48e80c95d38276c77610555e99567641ca41e6c24f67c9a83e}`
 
 # Platform
 Linux
