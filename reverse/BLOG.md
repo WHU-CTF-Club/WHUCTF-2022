@@ -45,6 +45,8 @@ int main()
   - **dnSpy**
   - **Java Decompiler**
   - **dnSpy / ILSpy**
+  - binary ninja(IDA 替代)
+  - ghidra(IDA替代)
   - binwalk
   - strings
   - file
@@ -82,3 +84,15 @@ int main()
 这次比赛的开展同时也是我们的一个尝试，即让`CTF`竞赛普及化，我们的计划是今后的每年都要进行这样的以赛代教的活动，大家的积极参与也能使我们积累更多的经验，让之后的活动越办越好！
 
 还记得我在**要求**中最后一栏写到的吗？做逆向这个模块，最重要的就是**有耐心，有想法，肯尝试，肯变通**。大家在自己练习的过程中可以自己慢慢体会。祝大家都能在这次比赛中玩的开心，收获成绩！
+
+## 补充Android逆向
+可参考网站https://ctf-wiki.org/android/basic_develop/basic_develop/
+
+常用工具
+- jeb
+- apkide少月版
+- dex2jar
+- recourse hacker
+- jadx
+- apktool 
+- 多版本java环境和jdk，Android Studio
