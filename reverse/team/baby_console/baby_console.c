@@ -197,7 +197,7 @@ int main()
 			{
 				if (Action[i] < 32 || Action[i] == 127)
 				{
-					printf("你试图向一股名为PWN的神秘力量，但是你的力量还不够强大，遭到了反噬！\n");
+					printf("你试图使用一股名为PWN的神秘力量，但是你的力量还不够强大，遭到了反噬！\n");
 					MindPoint = 0;
 				}
 			}
