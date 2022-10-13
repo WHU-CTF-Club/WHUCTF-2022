@@ -1,5 +1,6 @@
 ## 出题计划
 **粗体**表示已完成的
+*斜体*表示WIP
 ### **个人赛**
 - **Day 1** 安装`IDA Pro`, `gdb`
   - **hello_reverse**
@@ -23,6 +24,6 @@
   - **baby_exception** - 魔改base64 + C++异常套壳
   - **baby_way** - theWay去掉花指令
   - **baby_vm** - Linux 虚拟机
-- Day 2
-  - baby_complex - Windows NET套壳Native + CUDA C++ + 花指令
+- *Day 2*
+  - *baby_complex* - Windows套娃
   - **baby_console** - 操作台交互, angstorm 2022 weebhunters2
