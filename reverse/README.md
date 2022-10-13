@@ -24,6 +24,6 @@
   - **baby_exception** - 魔改base64 + C++异常套壳
   - **baby_way** - theWay去掉花指令
   - **baby_vm** - Linux 虚拟机
-- *Day 2*
-  - *baby_complex* - Windows套娃
+- **Day 2**
+  - **baby_complex** - Windows套娃
   - **baby_console** - 操作台交互, angstorm 2022 weebhunters2

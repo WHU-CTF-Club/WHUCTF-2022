@@ -17,7 +17,7 @@ Windows
 
 层2：python 通过aeskey对`complex_message`进行解密，得到native程序
 
-层3：C++ 一个tik-tak-toe游戏，连赢电脑50把获得提示
+层3：C++ 一个tik-tak-toe游戏，逻辑上是连赢电脑1000把获得提示，实际上直接逆向得到提示`RC4 secret in PE header...`
 
 层4：通过提示，知道是PE头隐写，使用了base64加密密钥`B64EncodedMeHere`，使用rc4加密flag`mayctf{secsome_d0oest_like_c0mpl3x_prOblem!}`
 
