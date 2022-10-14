@@ -2,7 +2,7 @@
 It's kind of complex when you are facing with multiple composed stuffs...
 
 # Difficulty
-⭐⭐⭐⭐⭐
+⭐⭐⭐⭐
 
 # Flag
 `mayctf{secsome_d0oest_like_c0mpl3x_prOblem!}`

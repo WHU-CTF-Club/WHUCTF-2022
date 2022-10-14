@@ -2,7 +2,7 @@
 As a modern language, C++ has exception of course. Now let's figure out what does the exception will done.
 
 # Difficulty
-⭐⭐
+⭐⭐⭐
 
 # Flag
 `mayctf{Y0ur_First_Exc3pt1on_Analyse!!!}`

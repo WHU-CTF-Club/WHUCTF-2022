@@ -2,7 +2,7 @@
 Maybe you want to have some challenges, if you have a NVIDIA CUDA Core, then try this one!
 
 # Difficulty
-⭐⭐⭐⭐
+⭐⭐⭐⭐⭐
 
 # Flag
 `MAYCTF{NviDiA_CuDA_GPU_ProGrAm!}`
