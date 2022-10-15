@@ -1,5 +1,5 @@
 # Description
-hacking the earth
+Get the shell to hack the earth
 
 # Difficulty
 ⭐⭐⭐
