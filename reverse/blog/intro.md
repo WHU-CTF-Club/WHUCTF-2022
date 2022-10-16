@@ -87,6 +87,9 @@ int main()
 
 还记得我在**要求**中最后一栏写到的吗？做逆向这个模块，最重要的就是**有耐心，有想法，肯尝试，肯变通**。大家在自己练习的过程中可以自己慢慢体会。祝大家都能在这次比赛中玩的开心，收获成绩！
 
+## 另外
+我会对BUUOJ上第一面的RE题目每道题都给出一个WriteUp，想在RE方向深入学习的同学可以看一下这些WP！
+
 ## 补充Android逆向
 可参考网站https://ctf-wiki.org/android/basic_develop/basic_develop/
 
