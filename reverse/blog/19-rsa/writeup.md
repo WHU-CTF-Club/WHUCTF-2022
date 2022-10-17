@@ -22,3 +22,6 @@ f = open('flag.enc', 'rb')
 data = f.read()
 print(rsa.decrypt(data, key))
 ```
+
+## 0x02 - Flag
+`flag{decrypt_256}`

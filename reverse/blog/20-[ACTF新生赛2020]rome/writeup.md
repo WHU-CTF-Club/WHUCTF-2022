@@ -77,3 +77,6 @@ for i in range(ord('a'), ord('z') + 1):
 
 print('flag{' + src.translate(str.maketrans(outtable, intable)) + '}')
 ```
+
+## 0x03 - Flag
+`flag{Cae3ar_th4_Gre@t}`
