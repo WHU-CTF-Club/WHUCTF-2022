@@ -36,4 +36,5 @@
   - **baby_vm** ⭐⭐⭐ - Linux 虚拟机
 - **Day 2**
   - **baby_complex** ⭐⭐⭐⭐ - Windows套娃
-  - **baby_console** ⭐⭐⭐⭐⭐ - 操作台交互, angstorm 2022 weebhunters2
+  - **baby_smoke** ⭐⭐⭐⭐ - CrackRTF
+  - ~~**baby_console** ⭐⭐⭐⭐⭐ - 操作台交互, angstorm 2022 weebhunters2~~ **OBSOLETED**
