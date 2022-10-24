@@ -26,10 +26,11 @@
 
 ### 团队赛
 - **Day 1**
-  - **baby_exception** ⭐⭐⭐ - 魔改base64 + C++异常套壳
-  - **baby_way** ⭐⭐⭐ - theWay去掉花指令
-  - **baby_vm** ⭐⭐⭐ - Linux 虚拟机
+  - **baby_way** ⭐⭐⭐ - theWay - 09:00
+  - **baby_challenge** ⭐⭐⭐⭐⭐ - CUDA C++ - 10:00
+  - **baby_smoke** ⭐⭐⭐⭐ - CrackRTF - 13:00
+  - **baby_vm** ⭐⭐⭐ - Linux 虚拟机 - 17:30
 - **Day 2**
-  - **baby_complex** ⭐⭐⭐⭐ - Windows套娃
-  - **baby_smoke** ⭐⭐⭐⭐ - CrackRTF
-  - **special_challenge** ⭐⭐⭐⭐⭐ - CUDA C++
+  - **baby_exception** ⭐⭐⭐ - 魔改base64 + C++异常套壳 - 09:30
+  - **baby_complex** ⭐⭐⭐⭐ - Windows套娃 - 14:30
+  
