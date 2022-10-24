@@ -12,22 +12,17 @@
 |⭐⭐⭐⭐⭐|无特定要求的有难度的题目，可能没有一般的解题方法|
 
 ### **个人赛**
-- **Day 1** 安装`IDA Pro`, `gdb`
-  - **hello_reverse** ⭐
+- **Day 1**
   - **dynamic_reverse** ⭐
-- **Day 2** 安装`dnSpy/ILSpy`
+- **Day 2**
   - **hello_net** ⭐
   - **maze** ⭐⭐
 - **Day 3**
-  - **tea** ⭐⭐
-  - **hello_android** ⭐ - Android JAVA
-- **Day 4**
   - **native_android** ⭐⭐ - Android Native
+- **Day 4**
   - **hello_exception** ⭐⭐⭐ - Linux Native + C++ Exception
-  - **magic_cube** ⭐⭐⭐⭐
-- **Day 5** 信息检索，自我学习
+- **Day 5**
   - **threads** ⭐⭐⭐ - Windows多线程
-  - **special_challenge** ⭐⭐⭐⭐⭐ - CUDA C++
 
 ### 团队赛
 - **Day 1**
@@ -37,4 +32,4 @@
 - **Day 2**
   - **baby_complex** ⭐⭐⭐⭐ - Windows套娃
   - **baby_smoke** ⭐⭐⭐⭐ - CrackRTF
-  - ~~**baby_console** ⭐⭐⭐⭐⭐ - 操作台交互, angstorm 2022 weebhunters2~~ **OBSOLETED**
+  - **special_challenge** ⭐⭐⭐⭐⭐ - CUDA C++
