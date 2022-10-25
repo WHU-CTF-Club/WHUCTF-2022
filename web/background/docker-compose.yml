@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+    web:
+        # 使用镜像
+        image: nginx:latest
+        # 端口映射
+        ports:
+            - "7777:80"
+        # 目录挂载
+        volumes:
+            - ./app:/home/wwwroot/
+            - ./config/nginx/site.conf:/etc/nginx/conf.d/default.conf
+        # 网络
+        networks:
+            - code-network
+        command: bash -c "cd /home/wwwroot/uploads/ && rm -f * && service nginx start && tail -f /dev/null "
+ #       command: ["/bin/sh", "-c","cd /home/wwwroot/uploads/ && rm -f * && tail -f /dev/null"]
+    php:
+        image: php:7.0-fpm
+        volumes:
+            - ./app:/home/wwwroot/
+        networks:
+            - code-network
+
+networks:
+    code-network:
+        driver: bridge

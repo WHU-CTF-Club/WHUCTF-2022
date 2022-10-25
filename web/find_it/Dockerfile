@@ -1,6 +1,3 @@
-FROM php:7.2-apache
-
-COPY . /var/www/html
-
+FROM nginx
+COPY . /usr/share/nginx/html
 EXPOSE 80
-

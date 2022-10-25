@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>file_upload_test</title>
+    <link rel="stylesheet" href="static/index.css">
+    <style type="text/css">
+        body{
+            background: url("{image}") no-repeat center center fixed;
+                    -webkit-background-size: cover;
+                    -o-background-size: cover;                
+                    background-size: cover;
+        }
+        </style>
+</head>
+<body>
+    <div class="divform">
+        <form enctype="multipart/form-data" action="1.php" method="POST" />
+            <h2>上传图片来更改背景！</h2>
+            <br />
+            <input name="uploaded" type="file"  /><br />
+            <br />
+            <div class="button" >
+                <input type="submit" name="Upload" value="上传" />
+            </div>
+            <h3>已上传至{image}</h3>
+        </form>
+    </div>
+</body>
+</html>

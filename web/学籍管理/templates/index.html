@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>login</title>
+        <link rel="stylesheet" href="static/index.css">
+    </head>
+    <body>
+        <div class="top">
+        </div>
+        <div class="title">
+            武氵又大学
+        </div>
+        <h2>
+            <span>你好，{{name}}同学,你被武氵又大学退学了</span>
+        </h2>
+        <div class='image1'>
+        <img src="static/index1.jpg" width=400px, height=300px>
+        </div>
+        <div class='image2'>
+        <img src="static/index2.jpg" width=400px, height=300px>
+        </div>
+        <div class="divform" >
+        <form action="/index" method="POST" >
+        <h3>
+          <span>你有什么想对校长说的话可以写在这里</span>
+        </h3>
+        <div class="item">
+          <input type="text" placeholder="这会发到校长邮箱" name='message'>
+        </div>
+        <div class="button" >
+          <button  margin-left=850px margin-top=230px;>提交</button>
+        </div>
+        </form>
+      </div>
+      
+        <form action="/regulation" method="GET">
+          <div class="manage"  >
+          <button >学籍管理</button>
+        </div>
+        </form>
+      
+     </body>
+</html>
