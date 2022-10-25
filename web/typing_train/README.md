@@ -2,7 +2,7 @@
 手速快点输入6666次很简单的
 
 # Difficulty
-⭐⭐⭐
+⭐⭐
 
 # Flag
 `mayctf{gR34t!!!_You_Typ3_s0_F4st!!!}`

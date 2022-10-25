@@ -2,7 +2,7 @@
 赢得游戏取得胜利吧！
 
 # Difficulty
-⭐⭐⭐
+⭐⭐
 
 # Flag
 `mayctf{Wow!_You_have_Real1y_H4ndle_http}`

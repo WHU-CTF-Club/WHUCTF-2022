@@ -34,13 +34,14 @@
         }
     }
 
-    $money = $_GET['money'];
+    $addr1 = $_GET['addr1'];
+    $addr2 = $_GET['addr2'];
 
-    if ($money) {
-        if ($money == 999 && $money !== '999') {
+    if ($addr1 && $addr2) {
+        if ($addr1 !== $addr2 && md5($addr1) === md5($addr2)) {
             echo unserialize($_POST['class']);
         } else {
-            echo "<script>alert('不要用假钱买shell!!!')</script>";
+            echo "<script>alert('地址错误!!!')</script>";
         }
     }
 ?>

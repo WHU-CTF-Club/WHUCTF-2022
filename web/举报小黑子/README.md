@@ -2,7 +2,7 @@
 有小黑子???速速请求律师发送律师函
 
 # Difficulty
-⭐⭐⭐⭐⭐
+⭐⭐⭐⭐
 
 # Flag
 `mayctf{St4rt_Y0ur_XSS_j0urn3y}`
