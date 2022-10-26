@@ -1,4 +1,5 @@
-# Description
+# **太简单 废弃**
+<!-- # Description
 Get the shell to hack the earth
 
 # Difficulty
@@ -14,4 +15,4 @@ Get the shell to hack the earth
 简单审计源代码
 ## 考点
  - 弱类型比较
- - 简单的类知识`__construct` 和 `__destruct`魔术方法
+ - 简单的类知识`__construct` 和 `__destruct`魔术方法 -->

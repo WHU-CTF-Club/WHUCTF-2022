@@ -34,12 +34,34 @@
         }
     }
 
+    class Admin {
+        public $name;
+        function __destruct() {
+            if ($this->name == 'admin') {
+                echo 'Welcome! My master';
+            } else {
+                die('no!!! you are not my master');
+            }
+        }
+    }
+
     $addr1 = $_GET['addr1'];
     $addr2 = $_GET['addr2'];
+    $key = $_GET['key'];
 
-    if ($addr1 && $addr2) {
+    if (isset($addr1) && isset($addr2) && isset($key)) {
         if ($addr1 !== $addr2 && md5($addr1) === md5($addr2)) {
-            echo unserialize($_POST['class']);
+            if ( !preg_match('/admin/i', $key )) {
+                switch (intval($key)) {
+                    case 'admin':
+                        echo 'admin';
+                        unserialize($_POST['class']);
+                        break;
+                    case 'guest':
+                        echo 'Hello';
+                        break;
+                }
+            }
         } else {
             echo "<script>alert('地址错误!!!')</script>";
         }

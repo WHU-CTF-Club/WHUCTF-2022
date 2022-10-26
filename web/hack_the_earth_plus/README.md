@@ -1,5 +1,5 @@
 # Description
-To get the next shell
+get the shell to hack the earth
 
 # Difficulty
 ⭐⭐⭐⭐
@@ -14,5 +14,6 @@ To get the next shell
 简单审计源代码
 ## 考点
  - 利用数组绕过MD5验证 `addr1[]=1&addr2[]=2`
+ - 弱类型比较`key=0`
  - 简单的类知识`__construct` 和 `__toString`魔术方法
- - 简单的构造序列化数据 `O:5:"Shell":1:{s:3:"cmd";s:3:"env";}` 由`genSerial.php`生成
+ - 简单的构造序列化数据 `O:5:"Admin":1:{s:4:"name";O:5:"Shell":1:{s:3:"cmd";s:3:"env";}}` 由`genSerial.php`生成
