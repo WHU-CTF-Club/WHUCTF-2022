@@ -7,7 +7,7 @@
 - Test and simulation : 28 Oct
 
 ## Due Date
-**31 Oct - 6 Nov**
+**30 Oct - 6 Nov**
 
 ## Flag form
 - `mayctf{xxxx-xxxx-xxxx-xxxx}`
