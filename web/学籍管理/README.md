@@ -9,7 +9,7 @@
 # Flag
 
 ```
-FLAG
+mayctf{Oh_y0u_f1nd_th3_pr0b1l3m_0f_f1a4k}
 ```
 
 # Platform (Optional)
@@ -18,7 +18,7 @@ ARCH
 
 # Hint (Optional)
 
-hint:What is the flask?What problem may flask have？
+hint:What is the flask?
 
 hint 2:How to chane session?
 
