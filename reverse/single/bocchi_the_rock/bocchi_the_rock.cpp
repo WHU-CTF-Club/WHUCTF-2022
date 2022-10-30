@@ -177,7 +177,7 @@ int main(int, char**)
         {
             ImGui::Begin("Congratulations?");
             ImGui::Image((void*)Image3.Data, {600.0f, 375.0f});
-            ImGui::Text("The flag is just what you have input in the first window!");
+            ImGui::Text("The flag is just what you have input at first in the first window!");
             if (ImGui::Button("Exit program"))
             {
                 clear_color = colors[5];
