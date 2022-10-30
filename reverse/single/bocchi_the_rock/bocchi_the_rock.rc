@@ -1,0 +1,7 @@
+#include <Windows.h>
+
+4 ICON icon.ico
+
+1 810 picture1.png
+2 810 picture2.png
+3 810 picture3.png

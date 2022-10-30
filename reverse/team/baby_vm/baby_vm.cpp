@@ -90,9 +90,7 @@ UInt32 VMCodeDatas[] =
 
 int main()
 {
-	std::unique_ptr<VirtualMachine> machine = std::make_unique<VirtualMachine>(VMCodeDatas, 0);
-
-	int result = machine->run();
+	int result = std::make_unique<VirtualMachine>(VMCodeDatas, 0)->run();
 
 	if (result) {
 		std::cout << "Do not modify my super computer!" << std::endl;

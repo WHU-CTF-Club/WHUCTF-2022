@@ -1,5 +1,6 @@
 # Description
 We hate algorithms, so sometimes, debug it dynamically can avoid that mess.
+
 Do you know how to do that?
 
 # Difficulty
