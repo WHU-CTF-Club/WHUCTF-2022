@@ -14,7 +14,6 @@ d = getPrime(128)
 E = gmpy2.invert(d,phi)
 assert(pow(3*d,4) < N)
 assert(E < phi)
-
 m = bytes_to_long(flag1)
 
 
