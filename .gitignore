@@ -8,3 +8,5 @@ reverse/baby_console/anscalc.cpp
 *.pyc
 .idea/
 
+
+reverse/single/bocchi_the_rock/imgui.ini

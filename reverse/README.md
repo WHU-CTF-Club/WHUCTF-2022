@@ -23,13 +23,13 @@
   - **hello_exception** ⭐⭐⭐ - Linux Native + C++ Exception
 - **Day 5**
   - **threads** ⭐⭐⭐ - Windows多线程
-
+- **Day 6**
+  - **bocchi_the_rock** ⭐⭐⭐⭐
 ### 团队赛
 - **Day 1**
-  - **baby_way** ⭐⭐⭐ - theWay - 09:00
-  - **baby_challenge** ⭐⭐⭐⭐⭐ - CUDA C++ - 10:00
-  - **baby_smoke** ⭐⭐⭐⭐ - CrackRTF - 13:00
-  - **baby_vm** ⭐⭐⭐ - Linux 虚拟机 - 17:30
+  - **baby_vm** ⭐⭐⭐ - Linux 虚拟机 - 09:00
+  - **baby_nvidia** ⭐⭐⭐⭐⭐ - CUDA C++ - 11:00
+  - **baby_smoke** ⭐⭐⭐⭐ - CrackRTF - 14:00
 - **Day 2**
   - **baby_exception** ⭐⭐⭐ - 魔改base64 + C++异常套壳 - 09:30
   - **baby_complex** ⭐⭐⭐⭐ - Windows套娃 - 14:30

@@ -1,1 +1,2 @@
-g++ -std=c++17 -O3 -o ./maze ./maze.cpp
+g++ -static -std=c++17 -o ./maze ./maze.cpp
+upx --best ./maze

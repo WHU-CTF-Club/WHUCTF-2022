@@ -1,5 +1,5 @@
 # Description
-Maybe you want to have some challenges, if you have a NVIDIA CUDA Core, then try this one!
+Maybe you want to have some challenges, if you have a NVIDIA CUDA GPU, then try this one!
 
 # Difficulty
 ⭐⭐⭐⭐⭐
