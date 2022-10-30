@@ -7,7 +7,6 @@ import string
 import random
 import hashlib
  
-#flag = "mayctf{y0u_ar3_7he_b3s7_Dr4g0n_S1ay3r_Warr10r}"
 table = string.ascii_letters + string.digits
 BANNER = br'''
    _____       .___.________   _________                       .___
@@ -99,6 +98,7 @@ class Task(socketserver.BaseRequestHandler):
                         #self.send(ans)
                         tmp = self.register()
                         if tmp == ans:
+                        #if tmp == b'1': 
                             self.send(b"KANG!!!QIANG!!!")
                             self.blood -= random.randint(1,999999)
                         else :
@@ -128,16 +128,21 @@ class Task(socketserver.BaseRequestHandler):
         if option == b'2':
             self.send(b"Stay away from here!")
         self.request.close()
+'''
+class ThreadedServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    pass
 
-
-
+class ForkedServer(socketserver.ForkingMixIn, socketserver.TCPServer):
+    pass
+'''
 
 if __name__ == "__main__":
-    HOST, PORT = '127.0.0.1', 11111
+    HOST, PORT = '0.0.0.0', 11111
     print("HOST:POST " + HOST + ":" + str(PORT))
     #server = ForkedServer((HOST, PORT), Task)
     with socketserver.TCPServer((HOST, PORT), Task) as server:
         # Activate the server; this will keep running until you
         # interrupt the program with Ctrl-C
+    #server = ForkedServer((HOST, PORT), Task)
         server.allow_reuse_address = True
         server.serve_forever()

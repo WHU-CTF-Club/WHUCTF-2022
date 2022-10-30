@@ -1,5 +1,5 @@
 # Description
-LONG DESC
+Can you help the princess kill the dragon?
 
 # Difficulty
 ⭐⭐
@@ -10,7 +10,7 @@ LONG DESC
 
 
 # Hint (Optional)
-LONG HINT
+
 
 # WriteUp
 题解
