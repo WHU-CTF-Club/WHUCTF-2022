@@ -153,7 +153,7 @@ int main(int, char**)
             ImGui::End();
         }
 
-        if (step1)
+        if (step1 && strlen(flag))
         {
             ImGui::Begin("A good night......");
             ImGui::Image((void*)Image2.Data, {800.0f, 500.0f});
