@@ -1,11 +1,11 @@
 # Description : 
-I've got drunk, by maotai. Can you guess what I think?
+I've got drunk, by maotai. I want to play a game with you, wish you win!
 
 # Difficulty
 ⭐⭐⭐⭐⭐
 
 # Flag : 
-mayctf{xxxx_xxxx_xxxx_xxxx_xxxx}
+`mayctf{y0u_ar3_4_m1nd_re4d3r}`
 
 # HINT : 
 

@@ -68,8 +68,8 @@ class Task(socketserver.BaseRequestHandler):
         #if not self.proof_of_work():
         #   return
         self.send(BANNER, newline=False)
-        self.east_longitude = 348045625
-        self.north_latitude = 1354545625
+        self.east_longitude = 1354545625
+        self.north_latitude = 348045625
         self.send(b"You are my wingman.")
         self.send(b"You are the only one who can help me")
         self.send(b"You have two choices now. Tell me where she is or leave now!")
