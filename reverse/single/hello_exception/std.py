@@ -1,8 +1,18 @@
-secrets = [0x4C, 0x31, 0x6A, 0x66, 0x5B, 0x56, 0x70, 0x62, 0x6E, 0x6E, 0x55, 0x59, 0x67, 0x7D, 0x3D, 0x6C, 0x77, 0x20, 0x70, 0x72, 0x4B, 0x5B, 0x77, 0x79, 0x61, 0x75, 0x7C, 0x69, 0x3D, 0x3C, 0x3F]
+secrets = list(b'L1jf[VpbnnUYg}=lw prK[wyau|i=<?')
 
-import codecs
+for i in range(len(secrets)):
+	secrets[i] ^= i
 
-for i in range (0, 31):
-	secrets[i] = secrets[i] ^ i
+def rot13(ch):
+	if ch >= ord('A') and ch <= ord('Z'):
+		return (ch - ord('A') + 13) % 26 + ord('A')
+	elif ch >= ord('a') and ch <= ord('z'):
+		return (ch - ord('a') + 13) % 26 + ord('a')
+	else:
+		return ch
 
-print('mayctf{' + codecs.encode(''.join(chr(x) for x in secrets), 'rot13') + '}')
+ans = ''
+for ch in secrets:
+	ans += chr(rot13(ch))
+
+print('mayctf{' + ans + '}')
