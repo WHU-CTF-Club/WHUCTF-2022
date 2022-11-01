@@ -66,10 +66,10 @@ class Task(socketserver.BaseRequestHandler):
     def handle(self):
         try:
             self.send(BANNER)
-            '''
+            
             signal.signal(signal.SIGALRM, self.timeout_handler)
             signal.alarm(240)
-            '''
+            
             if not self.proof_of_work():
                 self.send('Wrong!')
                 return
@@ -82,7 +82,7 @@ class Task(socketserver.BaseRequestHandler):
             self.send('Greetings! This is a console typing game(not). Can you do it?'
                       'One coin, one chance.')
 
-            #signal.alarm(3600)
+            signal.alarm(3600)
 
             while coin :
                 coin -= 1
@@ -115,18 +115,18 @@ class Task(socketserver.BaseRequestHandler):
         finally:
             self.request.close()
 
-'''
+
 class ForkedServer(socketserver.ForkingMixIn, socketserver.TCPServer):
     pass
-'''
+
 
 if __name__ == '__main__':
     HOST, PORT = '0.0.0.0', 11115
     print("HOST:POST " + HOST + ":" + str(PORT))
-    #server = ForkedServer((HOST, PORT), Task)
-    with socketserver.TCPServer((HOST, PORT), Task) as server:
+    server = ForkedServer((HOST, PORT), Task)
+    #with socketserver.TCPServer((HOST, PORT), Task) as server:
         # Activate the server; this will keep running until you
         # interrupt the program with Ctrl-C
     #server = ForkedServer((HOST, PORT), Task)
-        server.allow_reuse_address = True
-        server.serve_forever()
+    server.allow_reuse_address = True
+    server.serve_forever()
