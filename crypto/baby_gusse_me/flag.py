@@ -1,0 +1,1 @@
+FLAG = b'mayctf{m4yb3_y0u_gr0wn_u9_t0_b3_4n_4du1t}'
