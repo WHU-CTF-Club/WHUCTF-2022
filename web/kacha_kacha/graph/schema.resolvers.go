@@ -11,6 +11,21 @@ import (
 	"github.com/maybemia/kacha_kacha/graph/model"
 )
 
+func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
+	todo := &model.Todo{
+		Text: input.Text,
+		ID:   fmt.Sprintf("T%d", rand.Int()),
+		User: &model.User{ID: input.UserID, Name: "user " + input.UserID},
+	}
+	r.todos = append(r.todos, todo)
+	return todo, nil
+}
+
+func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
+	return r.todos, nil
+}
+
+/*
 // CreateTodo is the resolver for the createTodo field.
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
 	panic(fmt.Errorf("not implemented: CreateTodo - createTodo"))
@@ -20,6 +35,7 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 	panic(fmt.Errorf("not implemented: Todos - todos"))
 }
+*/
 
 // Mutation returns generated.MutationResolver implementation.
 func (r *Resolver) Mutation() generated.MutationResolver { return &mutationResolver{r} }

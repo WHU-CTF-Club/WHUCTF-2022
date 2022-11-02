@@ -9,13 +9,13 @@ import (
 // jwt加密密钥
 var jwtKey = []byte("a_secret_crect")
 
-// token的claim
+// Claims token的claim
 type Claims struct {
 	UserId uint
 	jwt.StandardClaims
 }
 
-// 发放token
+// ReleaseToken 发放token
 func ReleaseToken(user model.User) (string, error) {
 
 	//token的有效期
@@ -51,7 +51,7 @@ func ReleaseToken(user model.User) (string, error) {
 	return tokenString, nil
 }
 
-// 从tokenString中解析出claims并返回
+// ParseToken 从tokenString中解析出claims并返回
 func ParseToken(tokenString string) (*jwt.Token, *Claims, error) {
 	claims := &Claims{}
 

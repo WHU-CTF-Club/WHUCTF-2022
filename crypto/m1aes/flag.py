@@ -1,0 +1,1 @@
+FLAG = "mayctf{7h1s_i3_m1a_4es_8ut_n0t_a3s_///qw9/----/}"

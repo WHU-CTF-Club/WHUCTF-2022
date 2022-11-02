@@ -1,29 +1,23 @@
 package main
 
 import (
-	"log"
-	"net/http"
-	"os"
-
-	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/maybemia/kacha_kacha/graph"
-	"github.com/maybemia/kacha_kacha/graph/generated"
+	"github.com/gin-gonic/gin"
+	"github.com/maybemia/kacha_kacha/common"
 )
 
-const defaultPort = "8080"
-
 func main() {
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = defaultPort
-	}
 
-	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
+	//获取初始化的数据库
+	db := common.InitDB()
+	//延迟关闭数据库
+	defer db.Close()
 
-	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
-	http.Handle("/query", srv)
+	//创建一个默认的路由引擎
+	r := gin.Default()
 
-	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	//启动路由
+	CollectRoutes(r)
+
+	//在9090端口启动服务
+	r.Run(":9090")
 }
