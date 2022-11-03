@@ -110,7 +110,7 @@ int main()
 	__try
 	{
 		// fake
-		if (Input.length() == 4 && Verify_SHA256(Input, "b5d54c39e66671c9731b9f471e585d8262cd4f54963f0c93082d8dcf334d4c78"))
+		if (Input.length() == 93 && Verify_SHA256(Input, "2d63e6d0cb4305c91eac80e666c5f6a4b3a8ff8d08e555228ec74e10245b12c8"))
 			printf("You have passed the verification!\n");
 		else
 		{

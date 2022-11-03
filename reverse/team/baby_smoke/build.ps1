@@ -7,7 +7,7 @@ python .\baby_smoke_flag.py
 rc.exe .\baby_smoke.rc
 
 # Compile the exe file
-cl.exe -Ox -EHsc .\baby_smoke.cpp /arch:AVX512 /link .\baby_smoke.res
+cl.exe -O2 -EHsc .\baby_smoke.cpp /link .\baby_smoke.res
 
 # Clean up
 rm -Force .\baby_smoke.obj
