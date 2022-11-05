@@ -127,10 +127,10 @@ class Task(socketserver.BaseRequestHandler):
         finally:
             self.request.close()
 
-'''
+
 class ForkedServer(socketserver.ForkingMixIn, socketserver.TCPServer):
     pass
-'''
+
 
 if __name__ == '__main__':
     HOST, PORT = '0.0.0.0', 9995
