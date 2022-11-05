@@ -1,6 +1,6 @@
 # compile necessary stuffs
 csc /optimize /out:baby_complex_net.exe .\baby_complex_net.cs
-cl -O2 .\baby_complex_native.cpp /arch:AVX512 /EHsc
+cl -O2 .\baby_complex_native.cpp /EHsc
 python .\baby_complex_modifier.py
 python -m compileall .\baby_complex_verifier.py
 

@@ -12,6 +12,7 @@ int DecodeCounter = 92;
 // mayctf{It's_just@A_verrrrrrrry_s1mple_multiThr#ad_stuff_89EC1FBD-14ED-4DF3-93A3-91ED11A36956}
 void Do_Input()
 {
+	Input.reserve(100);
 	std::cout << "Please input your flag:" << std::endl;
 	std::cin >> Input;
 }
@@ -38,7 +39,7 @@ DWORD WINAPI Thread1Proc(LPVOID lpThreadParameter)
 		{
 			rot13(Input[DecodeCounter]);
 			--DecodeCounter;
-			Sleep(50);
+			Sleep(100);
 		}
 		ReleaseMutex(hMutex);
 	}
@@ -53,7 +54,7 @@ DWORD WINAPI Thread2Proc(LPVOID lpThreadParameter)
 		{
 			xor_idx(Input[DecodeCounter]);
 			--DecodeCounter;
-			Sleep(50);
+			Sleep(100);
 		}
 		ReleaseMutex(::hMutex);
 	}
@@ -67,6 +68,11 @@ std::string Get_SHA256(const std::string& str)
 	auto ret = engine.toString(ptr);
 	delete[] ptr;
 	return ret;
+}
+
+bool Verify_SHA256(const std::string& str, const char* sha)
+{
+	return Get_SHA256(str) == sha;
 }
 
 void Do_Validation()
@@ -101,38 +107,53 @@ int main()
 {
 	Do_Input();
 
-	hMutex = CreateMutex(nullptr, NULL, TEXT("secsome's lovely mutex"));
-	if (NULL == hMutex)
+	__try
 	{
-		::std::cout << "Failed to set-up the mutex!" << std::endl;
-		return 1;
+		// fake
+		if (Input.length() == 93 && Verify_SHA256(Input, "2d63e6d0cb4305c91eac80e666c5f6a4b3a8ff8d08e555228ec74e10245b12c8"))
+			printf("You have passed the verification!\n");
+		else
+		{
+			char ch = Input.front();
+			ch ^= ch;
+			ch /= ch;
+			for (auto& t : Input)
+				t ^= ch;
+			printf("You haven't pass the verification!\n");
+		}
 	}
-
-	hThread1 = CreateThread(nullptr, NULL, Thread1Proc, nullptr, NULL, NULL);
-	if (NULL == hThread1)
+	__except (EXCEPTION_EXECUTE_HANDLER)
 	{
-		std::cout << "Failed to start Thread1Proc!" << std::endl;
-		return 1;
+		hMutex = CreateMutex(nullptr, NULL, TEXT("secsome's lovely mutex"));
+		if (NULL == hMutex)
+		{
+			printf("Failed to set-up the mutex!\n");
+			return 1;
+		}
+
+		hThread1 = CreateThread(nullptr, NULL, Thread1Proc, nullptr, NULL, NULL);
+		if (NULL == hThread1)
+		{
+			printf("Failed to start Thread1Proc!\n");
+			return 1;
+		}
+
+		hThread2 = CreateThread(nullptr, NULL, Thread2Proc, nullptr, NULL, NULL);
+		if (NULL == hThread2)
+		{
+			printf("Failed to start Thread2Proc!\n");
+			return 1;
+		}
+
+		CloseHandle(hThread1);
+		CloseHandle(hThread2);
+
+		while (DecodeCounter != -1)
+			;
+
+		CloseHandle(hMutex);
+
+		Do_Validation();
 	}
-
-	hThread2 = CreateThread(nullptr, NULL, Thread2Proc, nullptr, NULL, NULL);
-	if (NULL == hThread2)
-	{
-		std::cout << "Failed to start Thread2Proc!" << std::endl;
-		return 1;
-	}
-
-	CloseHandle(hThread1);
-	CloseHandle(hThread2);
-
-	while (DecodeCounter != -1)
-		;
-
-	CloseHandle(hMutex);
-
-	Do_Validation();
-
-	(void)getchar();
-
 	return 0;
 }
