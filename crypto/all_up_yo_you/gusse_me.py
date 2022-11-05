@@ -132,7 +132,7 @@ class ForkedServer(socketserver.ForkingMixIn, socketserver.TCPServer):
 '''
 
 if __name__ == '__main__':
-    HOST, PORT = '0.0.0.0', 11114
+    HOST, PORT = '0.0.0.0', 9995
     print("HOST:POST " + HOST + ":" + str(PORT))
     #server = ForkedServer((HOST, PORT), Task)
     with socketserver.TCPServer((HOST, PORT), Task) as server:
