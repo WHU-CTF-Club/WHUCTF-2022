@@ -92,6 +92,7 @@ class Task(socketserver.BaseRequestHandler):
 
     def handle(self):
         try:
+            signal.alarm(600)
             self.send(BANNER)
 
             self.send(b'Greetings! This is a console game. Can you do it?'
@@ -100,7 +101,7 @@ class Task(socketserver.BaseRequestHandler):
             expr = self.recv(prompt=b'Please give me your expr: ').decode('l1')
             print(expr)
             expr = re.sub(r'\s', '', expr)
-            #signal.alarm(600)
+            
 
             if safe_expr.match(expr) is None:
                 self.send(b'Hacker!!!')
@@ -134,10 +135,10 @@ class ForkedServer(socketserver.ForkingMixIn, socketserver.TCPServer):
 if __name__ == '__main__':
     HOST, PORT = '0.0.0.0', 9995
     print("HOST:POST " + HOST + ":" + str(PORT))
-    #server = ForkedServer((HOST, PORT), Task)
-    with socketserver.TCPServer((HOST, PORT), Task) as server:
+    server = ForkedServer((HOST, PORT), Task)
+    #with socketserver.TCPServer((HOST, PORT), Task) as server:
         # Activate the server; this will keep running until you
         # interrupt the program with Ctrl-C
     #server = ForkedServer((HOST, PORT), Task)
-        server.allow_reuse_address = True
-        server.serve_forever()
+    server.allow_reuse_address = True
+    server.serve_forever()
