@@ -12,6 +12,9 @@ int main(){
 	//system("cat flag");
 	char s[16];
 	int num = 0;
+	setvbuf(stdout, 0, 2, 0);
+	setvbuf(stdin, 0, 2, 0);
+	printf("Hello, I'm coming!\n");
 	wel(0x207a,0x207a,num);
 	printf("Please give me a string!\n");
 	printf("Don't forget the length of int.\n");

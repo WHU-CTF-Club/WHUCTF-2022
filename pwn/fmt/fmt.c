@@ -5,6 +5,8 @@ int main(){
 	int a = 0;
 	int b = 4;
 	int c = 10;
+	setvbuf(stdout, 0, 2, 0);
+	setvbuf(stdin, 0, 2, 0);
 	printf("Give me your attention ,please!\n");
 	printf("There is a fmtstr, you can use it to change the value of a, b and c!\n");
 	printf("Please give me a string!\n");
