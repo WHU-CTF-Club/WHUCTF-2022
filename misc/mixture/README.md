@@ -9,7 +9,9 @@ who can help me to debug!!!
 `mayctf{n0w_1_mas73r_al1_lan8_ma9b3}`
 
 # WriteUp
-删去无用的，将所有语言转为某一种语言运行aes解密即可
+写了一个aes加密，又随便写了一点go的多线程，然后胡塞了很多其他语言进来
+删去无用的将所有语言转为某一种语言运行aes解密即可
+
 ```go
 package main
 

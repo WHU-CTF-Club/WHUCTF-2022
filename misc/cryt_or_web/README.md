@@ -12,6 +12,6 @@ Do it! Just do it!
 mayctf{bbaassee6644(YmpCM1gza3dkVjlOWVhNM1pYSmZjamhoWDJGdVJGOW1NV0Z6YTE5TllYbGlNdz09)}
 mayctf{bbaassee6644(YmpCM1gza3dkVjlOWVhNM1pYSmZ5jYamhoWDJGdVJGOW1NV0Z6YTE5TllYbGlNdz09)}
 
-也可加
+可以使用postman等工具提交post也可加
 Content-Type: application/x-www-form-urlencoded
 构造POST

@@ -13,4 +13,4 @@ Can you help the princess kill the dragon?
 
 
 # WriteUp
-题解
+算就行，见脚本
